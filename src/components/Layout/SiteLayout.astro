@@ -11,9 +11,12 @@ const { title = 'Peculiar Numbers', description = 'Exploring the strange pattern
     <title>{title}</title>
   </head>
   <body>
-    <header class="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-      <a href="/" class="focus-ring rounded-lg font-serif text-xl no-underline">Peculiar Numbers</a>
-      <nav><a class="focus-ring rounded-lg text-sm no-underline text-slate-300" href="/twin-primes">Twin Primes</a></nav>
+    <header class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-6">
+      <a href="/" class="focus-ring shrink-0 rounded-lg font-serif text-xl no-underline">Peculiar Numbers</a>
+      <nav class="flex items-center gap-4 overflow-x-auto text-sm">
+        <a class="focus-ring whitespace-nowrap rounded-lg no-underline text-slate-300" href="/sieves">Sieves</a>
+        <a class="focus-ring whitespace-nowrap rounded-lg no-underline text-slate-300" href="/twin-primes">Twin Primes</a>
+      </nav>
     </header>
     <main class="mx-auto max-w-6xl px-6 pb-20"><slot /></main>
   </body>
