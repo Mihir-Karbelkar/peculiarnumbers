@@ -1,9 +1,14 @@
 ---
 import SiteLayout from '../components/Layout/SiteLayout.astro';
 const experiments = [
-  ['Twin Prime Window Explorer', 'Implemented', '/twin-primes'],
-  ['Prime Gap Explorer', 'Coming Soon', '#'], ['Goldbach Explorer', 'Coming Soon', '#'], ['Ulam Spiral', 'Coming Soon', '#'],
-  ['Prime Constellations', 'Coming Soon', '#'], ['Integer Sequences', 'Coming Soon', '#'], ['Number Visualizations', 'Coming Soon', '#']
+  ['Sieve Playground', 'Implemented', '/sieves', 'Animate Eratosthenes, Euler, Sundaram, and Lucky Numbers step by step.'],
+  ['Twin Prime Window Explorer', 'Implemented', '/twin-primes', 'Measure how twin-prime pairs distribute across adjustable integer windows.'],
+  ['Prime Gap Explorer', 'Coming Soon', '#', 'Study the changing distance between consecutive primes.'],
+  ['Goldbach Explorer', 'Coming Soon', '#', 'Decompose even integers into pairs of primes.'],
+  ['Ulam Spiral', 'Coming Soon', '#', 'Place integers on a spiral and reveal diagonal prime structures.'],
+  ['Prime Constellations', 'Coming Soon', '#', 'Explore repeating arrangements of nearby primes.'],
+  ['Integer Sequences', 'Coming Soon', '#', 'Generate and compare unusual recursive and arithmetic sequences.'],
+  ['Number Visualizations', 'Coming Soon', '#', 'Open a flexible canvas for experimental integer maps.']
 ];
 ---
 <SiteLayout>
@@ -13,13 +18,13 @@ const experiments = [
     <p class="mx-auto mt-6 max-w-2xl text-xl leading-8 text-slate-300">Exploring the strange patterns hidden inside the integers.</p>
   </section>
   <section class="grid gap-5 md:grid-cols-2 lg:grid-cols-3" aria-label="Experiments">
-    {experiments.map(([name, status, href]) => (
+    {experiments.map(([name, status, href, description]) => (
       <a href={href} class="notebook-card group block p-6 no-underline transition duration-300 hover:-translate-y-1 hover:border-sky-300/40 hover:bg-white/[0.07]">
         <div class="flex items-start justify-between gap-4">
           <h2 class="font-serif text-2xl text-slate-50">{name}</h2>
           <span class:list={["rounded-full px-3 py-1 text-xs", status === 'Implemented' ? 'bg-sky-400/15 text-sky-200' : 'bg-slate-700/60 text-slate-300']}>{status}</span>
         </div>
-        <p class="mt-6 text-sm leading-6 text-slate-400">Open a quiet workspace for computation, pattern-finding, and visual mathematical play.</p>
+        <p class="mt-6 text-sm leading-6 text-slate-400">{description}</p>
       </a>
     ))}
   </section>

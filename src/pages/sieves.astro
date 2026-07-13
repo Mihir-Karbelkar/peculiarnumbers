@@ -1,0 +1,17 @@
+---
+import SiteLayout from '../components/Layout/SiteLayout.astro';
+import SievePlayground from '../components/Sieve/SievePlayground';
+---
+<SiteLayout
+  title="Sieve Playground | Peculiar Numbers"
+  description="Animate and compare the Sieve of Eratosthenes, Euler's linear sieve, the Sieve of Sundaram, and the Lucky Number sieve."
+>
+  <section class="py-12">
+    <p class="mb-3 text-sm uppercase tracking-[0.3em] text-sky-300">experiment 002</p>
+    <h1 class="font-serif text-5xl md:text-7xl">Sieve Playground</h1>
+    <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+      Watch integer fields evolve one operation at a time. Compare divisibility-based prime sieves with the position-based Lucky Number sieve, and inspect exactly which base eliminated every value.
+    </p>
+  </section>
+  <SievePlayground client:load />
+</SiteLayout>
